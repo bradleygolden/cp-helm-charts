@@ -33,4 +33,8 @@ data:
       name: "cp_kafka_controller_controllerstats_$1"
     - pattern : kafka.server<type=SessionExpireListener, name=(.+)><>OneMinuteRate
       name: "cp_kafka_server_sessionexpirelistener_$1"
+    - pattern : kafka.log<type=Log, name=LogEndOffset, topic=(.+), partition=(.+)><>Value
+      name: "cp_kafka_log_logendoffset_$1"
+    - pattern : kafka.log<type=Log, name=LogStartOffset, topic=(.+), partition=(.+)><>Value
+      name: "cp_kafka_log_logstartoffset_$1"
 {{- end }}
